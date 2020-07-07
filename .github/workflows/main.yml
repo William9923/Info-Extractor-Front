@@ -13,7 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - run: mkdir -p dist
       - uses: jsmrcaga/action-netlify-deploy@master
       - with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
