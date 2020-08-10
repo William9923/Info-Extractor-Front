@@ -1,13 +1,12 @@
-const Picker = (map) => {
+const Picker = (map, id) => {
     
     let optionValueTemplate = "";
     map.forEach((value, key) => {
         optionValueTemplate += `<option value="${value}">${key}</option>`;
-    })
+    });
 
 	const template = `
-    <select class="custom-select col-sm-3">
-        <option selected>Pick Any Algorithm</option>
+    <select class="custom-select col-sm-3" id=${id}>
         ${optionValueTemplate}
     </select>
   `;

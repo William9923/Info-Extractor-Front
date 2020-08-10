@@ -1,10 +1,10 @@
-const Textbox = (placeholder) => {
+const Textbox = (placeholder, id) => {
     const template = `
     <div class="input-group mb-3 mt-4">
         <div class="input-group-prepend">
             <span class="input-group-text">${placeholder}</span>
         </div>
-        <input type="text" class="form-control col-sm-3">
+        <input type="text" class="form-control col-sm-3" id="${id}">
     </div>
   `;
 
