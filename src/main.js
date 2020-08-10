@@ -1,4 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import './scss/app.scss';
+
 import App from './app'
 
 const app = async () => {
@@ -6,4 +8,4 @@ const app = async () => {
 }
 
 // Load app
-app()
+app();

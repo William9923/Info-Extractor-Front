@@ -1,7 +1,7 @@
 {
-  "name": "vanilla-parcel-boilerplate",
+  "name": "vanilla-parcel-infoextractor",
   "version": "1.0.0",
-  "description": "Simple workflow starter for building vanilla JS apps",
+  "description": "Vanilla JS Application for InfoExtractor Service",
   "main": "index.js",
   "scripts": {
     "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000",
@@ -15,7 +15,7 @@
   "keywords": [
     "parcel"
   ],
-  "author": "Brad Traversy",
+  "author": "William, Brad Traversy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bradtraversy/vanilla-parcel-boilerplate/issues"
@@ -30,6 +30,7 @@
     "sass": "^1.26.3"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.2"
   }
 }
