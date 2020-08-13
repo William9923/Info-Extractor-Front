@@ -2,12 +2,12 @@ $primary-color: #8675a9;
 $secondary-color: #82c4c3;
 $option-color: #efbbcf;
 $link-color: #c3aed6;
+$tab-color: #ffd5cd;
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	background-color: $primary-color;
 }
 
 .container {
@@ -33,4 +33,14 @@ a:hover {
 .btn:hover {
 	background-color: $link-color;
 }
+
+.btn:active {
+	background-color: $option-color;
+}
+
+.centered {
+	align-items: center;
+	justify-content: center;
+}
+
 

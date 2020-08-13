@@ -9,7 +9,12 @@ const InfoAlgoPicker = () => {
     algorithm.set('Regular Expression','regex');
 
     const template = `
-    ${Picker(algorithm, "input-algo")}
+    <label for="input-algo">
+      Input an algorithm
+    </label>
+    <div class="mb-4 mt-1">
+      ${Picker(algorithm, "input-algo")}
+    </div>
   `;
     return template;
 };

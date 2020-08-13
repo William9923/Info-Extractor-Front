@@ -2,7 +2,9 @@ import Textbox from '.././components/Textbox';
 
 const InfoKeywordTextbox = () => {
     const template = `
-    ${Textbox("Enter a Keyword", "input-keyword")}
+    <div class="row mt-4 mb-4 mx-1">
+      ${Textbox("Enter a Keyword", "input-keyword", 8)}
+    </div>
   `;
 	return template;
 };

@@ -8,7 +8,7 @@ const TabNavs = (headers, id) => {
         firstIteration = false; // after the first iteration
     })
 	const template = `
-    <ul class="nav nav-pills mb-3" id="pills-${id}" role="tablist" >
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-${id}" role="tablist" >
         ${tabHeaderTemplate}
     </ul>
   `;
