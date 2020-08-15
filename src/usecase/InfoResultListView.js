@@ -1,9 +1,8 @@
-import Tab from '../components/Tab';
+import ListView from '../components/ListView';
 import InfoURLTextbox from './InfoURLTextbox';
 import InfoTextareaInput from './InfoTextareaInput';
 
-
-const InfoMenuTab = () => {
+const InfoResultListView = () => {
 
   const headers = [
     {
@@ -32,10 +31,10 @@ const InfoMenuTab = () => {
   ];
   
 	const template = `
-    ${Tab(headers,"tab-menu-header",contents,"tab-menu-content")}
+    ${ListView(headers,"tab-menu-header",contents,"tab-menu-content")}
   `;
   return template;
   
 };
 
-export default InfoMenuTab;
+export default InfoResultListView;

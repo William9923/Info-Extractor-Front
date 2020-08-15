@@ -4,7 +4,9 @@ import InfoAlgoPicker from "./usecase/InfoAlgoPicker";
 import InfoKeywordTextbox from "./usecase/InfoKeywordTextbox";
 import InfoSearchButton from "./usecase/InfoSearchButton";
 import InfoMenuTab from "./usecase/InfoMenuTab";
-import Modal from './components/Modal';
+import InfoLoadingModal from "./usecase/InfoLoadingModal";
+import InfoResultModal from './usecase/InfoResultModal';
+import InfoResultListView from "./usecase/InfoResultListView";
 
 
 async function App() {
@@ -14,21 +16,18 @@ async function App() {
     <div class="container">
         ${InfoHeader()}
         ${InfoMenuTab()}
-
-
         ${InfoAlgoPicker()}
-
     <div class="form-group row centered">
       <div class="col-sm-5">
         ${InfoKeywordTextbox()}
       </div>
-        ${InfoSearchButton()}      
+        ${InfoSearchButton()}  
+    </div>  
+    <div id="result">
     </div>
         ${InfoFooter()}
     </div>
-
-    ${Modal('myModal')}
-  `
+  `;
   // Return a new node from template
   return template.content.cloneNode(true)
 }
