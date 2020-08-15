@@ -1,16 +1,14 @@
 const axios = require('axios').default;
 const util = require('util');
+const { default: URLNotExistError } = require('../error/URLNotExistError');
 const urlExists = util.promisify(require('url-exists'));
-
-const { textParser, urlParser } = require('./parser');
 
 const api = process.env.API_HOST;
 const version = process.env.VERSION;
 
-module.exports.text = async (prop) => {
-  const [keyword, content] = textParser(command);
+module.exports.TextService = async (keyword, algo, content) => {
   const params = new URLSearchParams({
-    algo: 'regex',
+    algo: algo,
     keyword: keyword,
     content: content,
   }).toString();
@@ -25,18 +23,13 @@ module.exports.text = async (prop) => {
     });
 };
 
-module.exports.scraper = async (command) => {
-  const [keyword, url] = urlParser(command);
+module.exports.URLService = async (keyword, algo, url) => {
   let isExists = await urlExists(url);
   if (!isExists) {
-    throw {
-      message: 'URL not exist',
-      error: 'url',
-    };
+    throw URLNotExistError("Url not valid", url);
   }
-
   const params = new URLSearchParams({
-    algo: 'regex',
+    algo: algo,
     keyword: keyword,
     url: url,
   }).toString();

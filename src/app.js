@@ -15,6 +15,8 @@ async function App() {
   template.innerHTML = `
     <div class="container">
         ${InfoHeader()}
+        <div id="alert-popup">
+        </div>
         ${InfoMenuTab()}
         ${InfoAlgoPicker()}
     <div class="form-group row centered">

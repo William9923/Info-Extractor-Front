@@ -2,7 +2,7 @@ import ListView from '../components/ListView';
 import InfoURLTextbox from './InfoURLTextbox';
 import InfoTextareaInput from './InfoTextareaInput';
 
-const InfoResultListView = () => {
+const InfoResultListView = (response) => {
 
   const headers = [
     {
