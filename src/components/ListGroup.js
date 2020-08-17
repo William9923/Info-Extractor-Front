@@ -2,15 +2,15 @@ import ListItem from './ListItem';
 
 const ListGroup = (items,id) => {
     let listGroupTemplate = ""; 
-    items.forEach((value, index) => {
+    items.forEach((value) => {
         listGroupTemplate += ListItem(value);
     })
 	const template = `
-    <ul class="list-group list-group-flush" id="${id}">
+    <ol class="list-group list-group-flush" id="${id}">
         ${listGroupTemplate}
-    </ul>
+    </ol>
   `;
 	return template;
 };
 
-export default TabNavs;
+export default ListGroup;

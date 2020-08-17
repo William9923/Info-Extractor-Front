@@ -17,6 +17,7 @@ document.querySelector('#btn-search').addEventListener('click', async function()
 
     // add getter logic here etc
     let response;
+    console.log("Process starting ...")
     try {
       switch(tab) {
         case "text":
@@ -38,13 +39,30 @@ document.querySelector('#btn-search').addEventListener('click', async function()
       } else {
         document.getElementById('alert-popup').innerHTML = InfoErrorAlert();
       }
+      returnButtonState();
     }
+    console.log(response);
+    document.querySelector('#result').innerHTML = InfoResultListView(preprocessResult(response));
 
-    document.querySelector('#result').innerHTML = InfoResultListView(response);
-
-    document.querySelector('#btn-search').innerHTML = '🔎';
-    document.querySelector('#btn-search').disabled = false;
+    returnButtonState();
 });
+
+const returnButtonState = () => {
+  document.querySelector('#btn-search').innerHTML = '🔎';
+  document.querySelector('#btn-search').disabled = false;
+}
+
+const preprocessResult = (response) => {
+  let stats = [];
+  Object.keys(response.stats).forEach( stat => stats.push(
+    stat + " : " + response.stats[stat]
+  ));
+
+  return  {
+    "statistic" : stats,
+    "answer" : response.answer
+  }
+}
 
 const _validate = (content, keyword) => {
   if (!keyword) {
