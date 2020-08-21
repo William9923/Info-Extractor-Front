@@ -7,6 +7,7 @@ import InfoErrorAlert from './usecase/InfoErrorAlert';
 import InfoURLNotExistAlert from './usecase/InfoURLNotExistAlert';
 import DataNotFilledError from './error/DataNotFilledError';
 import InfoResultModal from './usecase/InfoResultModal';
+import { Preprocess, Beautify } from './logic/preprocess';
 
 const { TextService, URLService } = require('./logic/fetcher');
 
@@ -54,10 +55,10 @@ document.querySelector('#btn-search').addEventListener('click', async function (
     returnButtonState();
   }
   loaderModal.hide();
-
+  console.debug("hai hai");
   // process
   if (response != undefined) {
-    let data = preprocessResult(response);
+    let data = preprocessResult(response, keyword);
     document.querySelector('#result-placeholder').innerHTML = InfoResultModal(data); // input result of preprocessing into result modal
     var resultModal = new Modal(document.getElementById("result-modal"), {});
     resultModal.show();
@@ -71,13 +72,14 @@ const returnButtonState = () => {
   document.querySelector('#btn-search').disabled = false;
 }
 
-const preprocessResult = (response) => {
+const preprocessResult = (response, keyword) => {
 
   // preprocess answer for formatting (find suitable algorithm)
-
+  let result = Preprocess(response.answer, response.metadata.seperator, keyword);
+  let stats = Beautify(response.stats);
   return {
-    "stats": response.stats,
-    "result": response.answer
+    "stats": stats,
+    "result": result
   }
 }
 
