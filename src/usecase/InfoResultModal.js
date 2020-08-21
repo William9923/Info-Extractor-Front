@@ -1,8 +1,9 @@
-import LargeModal from ".././components/LargeModal";
-import Loader from '.././components/Loader';
-const InfoResultModal = () => {
+import InfoResultTab from "./InfoResultTab";
+import LargeModal from '.././components/LargeModal';
+
+const InfoResultModal = (data) => {
 	const template = `
-    ${LargeModal(Loader(),'Processing ...','result-modal', 'loading-modal', 'btn-result')}
+    ${LargeModal(InfoResultTab(data),'Service Result','result-modal', 'title-modal')}
   `;
   return template;
 };

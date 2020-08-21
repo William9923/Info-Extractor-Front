@@ -5,10 +5,14 @@ const Picker = (map, id) => {
         optionValueTemplate += `<option value="${value}">${key}</option>`;
     });
 
-	const template = `
-    <select class="custom-select col-sm-3" id=${id}>
-        ${optionValueTemplate}
-    </select>
+    const template = `
+    <div class="row centered">
+        <div class="col-xl-4 col-md-6 col-sm-9">
+            <select class="form-select" id=${id}>
+                ${optionValueTemplate}
+            </select>
+        </div>
+    </div>
   `;
 
 	return template;

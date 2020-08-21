@@ -9,7 +9,7 @@ const InfoAlgoPicker = () => {
     algorithm.set('Regular Expression','regex');
 
     const template = `
-    <label for="input-algo">
+    <label for="input-algo" class="form-label">
       Input an algorithm
     </label>
     <div class="mb-4 mt-1">

@@ -2,10 +2,10 @@ const Footer = (createdBy) => {
     let date = new Date();
 
     const template = `
+    <footer class="footer mt-auto py-3 fixed-bottom">
     <hr>
-    <footer class="footer mt-auto py-3">
         <div class="container">
-            <span>&copy; Created by <a href="${createdBy['link']}" target="_blank">${createdBy['name']}</a> - ${date.getFullYear()}</span>
+            <span>&copy; Created by <a class="link-primary" href="${createdBy['link']}" target="_blank">${createdBy['name']}</a> - ${date.getFullYear()}</span>
         </div>
     </footer>
   `;

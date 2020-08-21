@@ -6,9 +6,9 @@ const ListGroup = (items,id) => {
         listGroupTemplate += ListItem(value);
     })
 	const template = `
-    <ol class="list-group list-group-flush" id="${id}">
+    <ul class="list-group" id="${id}">
         ${listGroupTemplate}
-    </ol>
+    </ul>
   `;
 	return template;
 };
